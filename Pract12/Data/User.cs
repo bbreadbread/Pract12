@@ -14,6 +14,9 @@ namespace Pract12.Data
         private string _email;
         private string _password;
         private DateTime _createdAt;
+        private UserProfile _userProfile;
+        private int _roleId;
+        private Role _role;
 
         public int Id
         {
@@ -47,6 +50,21 @@ namespace Pract12.Data
         {
             get => _createdAt;
             set => SetProperty(ref _createdAt, value);
+        }        
+        public UserProfile UserProfile
+        {
+            get => _userProfile;
+            set => SetProperty(ref _userProfile, value);
+        }
+        public int RoleId
+        {
+            get => _roleId;
+            set => SetProperty(ref _roleId, value);
+        }
+        public Role Role
+        {
+            get => _role;
+            set => SetProperty(ref _role, value);
         }
     }
 }

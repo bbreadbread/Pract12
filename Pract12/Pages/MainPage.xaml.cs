@@ -33,6 +33,12 @@ namespace Pract12.Pages
         {
             NavigationService.Navigate(new UserFormPage());
         }
+
+        public void go_role(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new GroupList());
+        }
+
         public void Edit(object sender, EventArgs e)
         {
             if (user == null)
@@ -54,6 +60,11 @@ namespace Pract12.Pages
             {
                 service.Remove(user);
             }
+        }
+
+        public void editProfile(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new ProfilePage(user));
         }
 
     }

@@ -4,8 +4,8 @@
 
     <Style  TargetType="Button" BasedOn="{StaticResource MaterialDesignOutlinedDarkButton}">
         <Setter Property="Height" Value="30"/>
-        <Setter Property="Width" Value="200"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Width" Value="180"/>
+        <Setter Property="Margin" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource TextHint}"/>
         <Setter Property="Foreground" Value="{StaticResource ButtonBackground}"/>
     </Style>
@@ -13,7 +13,7 @@
     <Style TargetType="StackPanel">
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Margin" Value="1"/>
     </Style>
 
     <Style TargetType="StackPanel" x:Key="Main">        
@@ -35,7 +35,7 @@
     </Style>
 
     <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignOutlinedTextBox}">
-        <Setter Property="Width" Value="200"/>
+        <Setter Property="Width" Value="180"/>
         <Setter Property="Height" Value="35"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Padding" Value="0"/>
@@ -44,6 +44,11 @@
         <Setter Property="BorderBrush" Value="{DynamicResource TextHint}"/>
     </Style>
 
+    <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignComboBox}">
+        <Setter Property="Width" Value="180"/>
+        <Setter Property="Height" Value="35"/>
+    </Style>
+    
     <Style TargetType="TextBox" x:Key="TextBoxAp" BasedOn="{StaticResource {x:Type TextBox}}">
         <Setter Property="Height" Value="25"/>
         <Setter Property="Width" Value="150"/>
@@ -70,4 +75,8 @@
         <Setter Property="Foreground" Value="{DynamicResource TextMain}"/>
     </Style>
 
+    <Style TargetType="Image">
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Height" Value="90"/>
+    </Style>
 </ResourceDictionary>

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pract12.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       DataContext="{Binding RelativeSource={RelativeSource Self}}"
       Title="MainPage">    
     
@@ -15,21 +15,24 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Button Click="go_form">Добавить</Button>
-            <Button Click="remove">Удалить</Button>
+            <Button Click="go_form">Добавить пользователя</Button>
+            <Button Click="remove">Удалить пользователя</Button>
+            <Button Click="go_role">Управление ролями</Button>
+            <Button Click="editProfile">Посмотреть профиль</Button>
         </StackPanel>
         <ListView Grid.Row="1" ItemsSource="{Binding service.Users}"
-                  MouseDoubleClick="Edit" SelectedItem="{Binding user}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding Login}"/>
-                            <TextBlock Text="{Binding Name}"/>
-                            <TextBlock Text="{Binding Email}"/>
-                            <TextBlock Text="{Binding Password}"/>
-                            <TextBlock Text="{Binding CreatedAt, StringFormat={}{0:dd.MM.yyyy}}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+              MouseDoubleClick="Edit" SelectedItem="{Binding user}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Login}"/>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Email}"/>
+                        <TextBlock Text="{Binding Password}"/>
+                        <TextBlock Text="{Binding CreatedAt, StringFormat={}{0:dd.MM.yyyy}}"/>
+                        <TextBlock Text="{Binding Role.Title}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid></Page>

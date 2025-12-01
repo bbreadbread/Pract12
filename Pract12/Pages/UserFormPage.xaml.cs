@@ -34,6 +34,8 @@ namespace Pract12.Pages
                 _user = _editUser;
                 isEdit = true;
             }
+            if (_user.Role == null)
+                _user.Role = new();
             DataContext = _user;
         }
         private void save(object sender, RoutedEventArgs e)

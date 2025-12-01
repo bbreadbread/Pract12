@@ -13,8 +13,7 @@ namespace Pract12.ValidationRules
     public class LoginValidation : ValidationRule
     {
         public UsersService service { get; set; } = new();
-        public override ValidationResult Validate(object value, CultureInfo
-        cultureInfo)
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             var input = (value ?? "").ToString().Trim().ToLower();
             if (input == string.Empty)

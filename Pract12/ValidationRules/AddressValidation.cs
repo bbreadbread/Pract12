@@ -13,8 +13,7 @@ namespace Pract12.ValidationRules
     public class AdressValidation : ValidationRule
     {
         public UsersService service { get; set; } = new();
-        public override ValidationResult Validate(object value, CultureInfo
-        cultureInfo)
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             var input = (value ?? "").ToString().Trim();
             if (input == string.Empty)
