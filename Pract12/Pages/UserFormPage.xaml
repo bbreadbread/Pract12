@@ -23,7 +23,7 @@
             <Label>Роль</Label>
             <ComboBox ItemsSource="{Binding Source={StaticResource rService}, Path=Roles}"
                       DisplayMemberPath="Title"
-                      SelectedItem="{Binding Role}"/>
+                      SelectedValue="{Binding Role}"/>
         </StackPanel>
         <StackPanel>
             <StackPanel>
@@ -32,9 +32,9 @@
                     <TextBox x:Name="LoginBox"  >
                         <TextBox.Text>
                             <Binding Path="Login">
-                                <!--<Binding.ValidationRules>
+                                <Binding.ValidationRules>
                                     <validators:LoginValidation/>
-                                </Binding.ValidationRules>-->
+                                </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
@@ -47,9 +47,9 @@
                     <TextBox x:Name="NameBox"  >
                         <TextBox.Text>
                             <Binding Path="Name">
-                                <!--<Binding.ValidationRules>
+                                <Binding.ValidationRules>
                                     <validators:MainValidation/>
-                                </Binding.ValidationRules>-->
+                                </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
@@ -62,9 +62,9 @@
                     <TextBox x:Name="EmailBox"  >
                         <TextBox.Text>
                             <Binding Path="Email">
-                                <!--<Binding.ValidationRules>
+                                <Binding.ValidationRules>
                                     <validators:AdressValidation/>
-                                </Binding.ValidationRules>-->
+                                </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
@@ -77,9 +77,9 @@
                     <TextBox x:Name="PasswordBox"  >
                         <TextBox.Text>
                             <Binding Path="Password">
-                                <!--<Binding.ValidationRules>
+                                <Binding.ValidationRules>
                                     <validators:PasswordValidation/>
-                                </Binding.ValidationRules>-->
+                                </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>

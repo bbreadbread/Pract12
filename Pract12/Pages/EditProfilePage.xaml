@@ -11,8 +11,8 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="290"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="290"/>
         </Grid.ColumnDefinitions>
 
         <StackPanel>
@@ -21,9 +21,9 @@
                 <TextBox x:Name="PhoneBox">
                     <TextBox.Text>
                         <Binding Path="UserProfile.Phone">
-                            <!--<Binding.ValidationRules>
-                        <validators:PasswordValidation/>
-                    </Binding.ValidationRules>-->
+                            <Binding.ValidationRules>
+                                <validators:NumberValidation/>
+                    </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -31,12 +31,12 @@
 
             <Label>День рождения</Label>
             <StackPanel>
-                <TextBox x:Name="BirthdayBox">
+                <TextBox>
                     <TextBox.Text>
                         <Binding Path="UserProfile.Birthday">
-                            <!--<Binding.ValidationRules>
-                        <validators:PasswordValidation/>
-                    </Binding.ValidationRules>-->
+                            <Binding.ValidationRules>
+                                <validators:DateValidation/>
+                            </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -47,9 +47,9 @@
                 <TextBox x:Name="BioBox" Height="100">
                     <TextBox.Text>
                         <Binding Path="UserProfile.Bio">
-                            <!--<Binding.ValidationRules>
-                                    <validators:PasswordValidation/>
-                                </Binding.ValidationRules>-->
+                            <Binding.ValidationRules>
+                                    <validators:MainValidation/>
+                                </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -61,8 +61,12 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <Label>Аватар</Label>
-                <Image x:Name="AvatarImage" MouseLeftButtonDown="AvatarAdd" DataContext="{Binding UserProfile.AvatarUrl}"/>
-            </StackPanel>
+            <Label>Аватар</Label>
+            <Border Style="{DynamicResource AvatarBorder}"
+                    MouseDown="AvatarAdd">
+                <Image x:Name="AvatarImage" PreviewMouseDown="AvatarAdd" 
+               Source="{Binding UserProfile.AvatarUrl}"/>
+            </Border>
+        </StackPanel>
     </Grid>
 </Page>

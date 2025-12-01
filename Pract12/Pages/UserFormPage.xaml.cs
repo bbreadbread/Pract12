@@ -25,17 +25,28 @@ namespace Pract12.Pages
     {
         private UsersService _service = new();
         public User _user = new();
+        private User _originalUser = null;
         bool isEdit = false;
         public UserFormPage(User? _editUser = null)
         {
             InitializeComponent();
             if (_editUser != null)
             {
-                _user = _editUser;
+                _originalUser = _editUser;
+                _user = new User
+                {
+                    Id = _editUser.Id,
+                    Login = _editUser.Login,
+                    Name = _editUser.Name,
+                    Email = _editUser.Email,
+                    Password = _editUser.Password,
+                    CreatedAt = _editUser.CreatedAt,
+                    RoleId = _editUser.RoleId,
+                    Role = _editUser.Role,
+                    UserProfile = _editUser.UserProfile
+                };
                 isEdit = true;
             }
-            if (_user.Role == null)
-                _user.Role = new();
             DataContext = _user;
         }
         private void save(object sender, RoutedEventArgs e)
@@ -43,7 +54,16 @@ namespace Pract12.Pages
             if (!(String.IsNullOrEmpty(_user.Login) && String.IsNullOrEmpty(_user.Name) && String.IsNullOrEmpty(_user.Email) && String.IsNullOrEmpty(_user.Password)))
             {
                 if (isEdit)
+                {
+                    _originalUser.Login = _user.Login;
+                    _originalUser.Name = _user.Name;
+                    _originalUser.Email = _user.Email;
+                    _originalUser.Password = _user.Password;
+                    _originalUser.RoleId = _user.RoleId;
+                    _originalUser.Role = _user.Role;
+
                     _service.Commit();
+                }
                 else
                 {
                     _user.CreatedAt = DateTime.Now;

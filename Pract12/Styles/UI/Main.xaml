@@ -5,7 +5,7 @@
     <Style  TargetType="Button" BasedOn="{StaticResource MaterialDesignOutlinedDarkButton}">
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="180"/>
-        <Setter Property="Margin" Value="1"/>
+        <Setter Property="Margin" Value="3"/>
         <Setter Property="BorderBrush" Value="{StaticResource TextHint}"/>
         <Setter Property="Foreground" Value="{StaticResource ButtonBackground}"/>
     </Style>
@@ -58,6 +58,7 @@
         <Setter Property="Foreground" Value="{DynamicResource TextMain}"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="15"/>
     </Style>
 
     <Style TargetType="ListView" BasedOn="{StaticResource MaterialDesignListView}">
@@ -76,7 +77,16 @@
     </Style>
 
     <Style TargetType="Image">
-        <Setter Property="Width" Value="90"/>
-        <Setter Property="Height" Value="90"/>
+        <Setter Property="Width" Value="180"/>
+        <Setter Property="Height" Value="180"/>
+    </Style>
+    
+    <Style x:Key="AvatarBorder" TargetType="Border">
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="200"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonBackground}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
     </Style>
 </ResourceDictionary>

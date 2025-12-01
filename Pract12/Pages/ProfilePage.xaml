@@ -22,9 +22,9 @@
                 <TextBox x:Name="PhoneBox" IsReadOnly="True" >
                     <TextBox.Text>
                         <Binding Path="UserProfile.Phone">
-                            <!--<Binding.ValidationRules>
+                            <Binding.ValidationRules>
                                 <validators:PasswordValidation/>
-                            </Binding.ValidationRules>-->
+                            </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -35,9 +35,9 @@
                 <TextBox x:Name="BirthdayBox" IsReadOnly="True" >
                     <TextBox.Text>
                         <Binding Path="UserProfile.Birthday">
-                            <!--<Binding.ValidationRules>
+                            <Binding.ValidationRules>
                                 <validators:PasswordValidation/>
-                            </Binding.ValidationRules>-->
+                            </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -48,9 +48,9 @@
                 <TextBox x:Name="BioBox" IsReadOnly="True" Height="100">
                     <TextBox.Text>
                         <Binding Path="UserProfile.Bio">
-                            <!--<Binding.ValidationRules>
+                            <Binding.ValidationRules>
                                 <validators:PasswordValidation/>
-                            </Binding.ValidationRules>-->
+                            </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>
@@ -58,9 +58,11 @@
         </StackPanel>
         <StackPanel>
            <Label>Изображение</Label>
-            <StackPanel>
-                <Image DataContext="{Binding UserProfile.AvatarUrl}"/>
-            </StackPanel> 
+            <Border Style="{DynamicResource AvatarBorder}">
+                <Image x:Name="AvatarImage" 
+               Source="{Binding UserProfile.AvatarUrl}"/>
+
+            </Border>
         </StackPanel>
         
         <StackPanel Grid.Column="2">

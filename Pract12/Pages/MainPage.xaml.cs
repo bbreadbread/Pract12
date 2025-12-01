@@ -29,6 +29,7 @@ namespace Pract12.Pages
         {
             InitializeComponent();
         }
+
         public void go_form(object sender, EventArgs e)
         {
             NavigationService.Navigate(new UserFormPage());
@@ -39,6 +40,7 @@ namespace Pract12.Pages
             NavigationService.Navigate(new GroupList());
         }
 
+        //ДВОЙНОЙ КЛИК  
         public void Edit(object sender, EventArgs e)
         {
             if (user == null)
@@ -48,6 +50,8 @@ namespace Pract12.Pages
             }
             NavigationService.Navigate(new UserFormPage(user));
         }
+        //
+
         public void remove(object sender, EventArgs e)
         {
             if (user == null)

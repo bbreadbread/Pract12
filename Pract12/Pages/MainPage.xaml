@@ -14,12 +14,14 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <StackPanel Orientation="Horizontal">
             <Button Click="go_form">Добавить пользователя</Button>
             <Button Click="remove">Удалить пользователя</Button>
             <Button Click="go_role">Управление ролями</Button>
             <Button Click="editProfile">Посмотреть профиль</Button>
         </StackPanel>
+        
         <ListView Grid.Row="1" ItemsSource="{Binding service.Users}"
               MouseDoubleClick="Edit" SelectedItem="{Binding user}">
             <ListView.ItemTemplate>
@@ -35,4 +37,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
     </Grid></Page>
