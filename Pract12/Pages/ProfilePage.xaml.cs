@@ -30,15 +30,17 @@ namespace Pract12.Pages
             if (user != null)
                 _user = user;
 
-            if (_user.UserProfile == null)
-            {
-                _user.UserProfile = new UserProfile();
-            }
+           
 
             DataContext = _user;
         }
         private void save(object sender, RoutedEventArgs e)
         {
+            if (_user.UserProfile == null)
+            {
+                _user.UserProfile = new UserProfile();
+            }
+
             NavigationService.Navigate(new EditProfilePage(_user));
         }
         private void back(object sender, RoutedEventArgs e)

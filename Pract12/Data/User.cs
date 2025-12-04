@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,13 @@ namespace Pract12.Data
         {
             get => _role;
             set => SetProperty(ref _role, value);
+        }
+
+        private ObservableCollection<UserInterestGroup> _userInterestGroup;
+        public ObservableCollection<UserInterestGroup> UserInterestGroup
+        {
+            get => _userInterestGroup;
+            set => SetProperty(ref _userInterestGroup, value);
         }
     }
 }

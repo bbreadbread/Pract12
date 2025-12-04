@@ -56,7 +56,7 @@ namespace Pract12.Pages
         {
             if (user == null)
             {
-                MessageBox.Show("Выберите запись!");
+                MessageBox.Show("Выберите элемент из списка!");
                 return;
             }
             if (MessageBox.Show("Вы действительно хотите удалить запись?", "Удалить?",
@@ -68,7 +68,27 @@ namespace Pract12.Pages
 
         public void editProfile(object sender, EventArgs e)
         {
+            if (user == null)
+            {
+                MessageBox.Show("Выберите элемент из списка!");
+                return;
+            }
             NavigationService.Navigate(new ProfilePage(user));
+        }
+
+        public void go_list_group(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new InterestGroupListPage());
+        }
+
+        public void go_user_group(object sender, EventArgs e)
+        {
+            if (user == null)
+            {
+                MessageBox.Show("Выберите элемент из списка!");
+                return;
+            }
+            NavigationService.Navigate(new UserInterestGroupPage(user));
         }
 
     }

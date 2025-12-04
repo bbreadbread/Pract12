@@ -80,6 +80,11 @@
         <Setter Property="Width" Value="180"/>
         <Setter Property="Height" Value="180"/>
     </Style>
+
+    <Style TargetType="Image" x:Key="IntImg" BasedOn="{StaticResource {x:Type Image}}">
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="100"/>
+    </Style>
     
     <Style x:Key="AvatarBorder" TargetType="Border">
         <Setter Property="Width" Value="200"/>
@@ -89,4 +94,18 @@
         <Setter Property="CornerRadius" Value="5"/>
         <Setter Property="Margin" Value="5"/>
     </Style>
+
+    <Style TargetType="Border" x:Key="IntAvBor">
+        <Setter Property="Width" Value="110"/>
+        <Setter Property="Height" Value="110"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonBackground}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="2"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TitleNameUser">
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
 </ResourceDictionary>

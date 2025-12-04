@@ -11,18 +11,33 @@
     
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Click="go_form" Grid.Row="0" Grid.Column="0">Добавить пользователя</Button>
+
+        <Button Click="remove" Grid.Row="0" Grid.Column="1">Удалить пользователя</Button>
+
+        <Button Click="editProfile" Grid.Row="1" Grid.ColumnSpan="2">Посмотреть профиль</Button>
         
-        <StackPanel Orientation="Horizontal">
-            <Button Click="go_form">Добавить пользователя</Button>
-            <Button Click="remove">Удалить пользователя</Button>
-            <Button Click="go_role">Управление ролями</Button>
-            <Button Click="editProfile">Посмотреть профиль</Button>
-        </StackPanel>
+
+        <Button Click="go_role" Grid.Row="0" Grid.Column="2">Управление ролями</Button>
         
-        <ListView Grid.Row="1" ItemsSource="{Binding service.Users}"
+
+        <Button Click="go_list_group" Grid.Row="0" Grid.Column="3">Управление группами</Button>        
+
+        <Button Click="go_user_group" Grid.Row="1" Grid.Column="3">Выбрать группу</Button>
+        
+        <ListView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" ItemsSource="{Binding service.Users}"
               MouseDoubleClick="Edit" SelectedItem="{Binding user}">
             <ListView.ItemTemplate>
                 <DataTemplate>

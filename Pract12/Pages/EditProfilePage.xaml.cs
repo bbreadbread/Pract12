@@ -31,8 +31,7 @@ namespace Pract12.Pages
             InitializeComponent();
 
             if (user != null)
-            {
-                
+            {                
                 _user = user;
 
                 if (_user.UserProfile == null)

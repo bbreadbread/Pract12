@@ -2,6 +2,7 @@
 using Pract12.Service;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,32 +19,39 @@ using System.Windows.Shapes;
 namespace Pract12.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для GroupForm.xaml
+    /// Логика взаимодействия для AddInterestGroupPage.xaml
     /// </summary>
-    public partial class GroupForm : Page
+    public partial class AddInterestGroupPage : Page
     {
-        Role _role = new();
-        RolesService service = new();
+        InterestGroup _group = new();
+        InterestGroupService service = new();
         bool IsEdit = false;
 
-        public GroupForm(Role? role = null)
+        public AddInterestGroupPage(InterestGroup? group = null)
         {
             InitializeComponent();
-            if (role != null)
+            if (group != null)
             {
-                service.LoadRelation(role, "Users");
-                _role = role;
+                service.LoadRelation(group, "UserInterestGroup");
+                _group = group;
                 IsEdit = true;
             }
-            DataContext = _role;
+            DataContext = _group;
         }
+
         private void save(object sender, RoutedEventArgs e)
         {
-            if (IsEdit)
-                service.Commit();
-            else
-                service.Add(_role);
-            back(sender, e);
+            if (!(Validation.GetHasError(TitleBox)))
+            {
+                if (IsEdit)
+                    service.Commit();
+                else
+                    service.Add(_group);
+                back(sender, e);
+            }
+            else MessageBox.Show("Наименование занято");
+
+           
         }
         private void back(object sender, RoutedEventArgs e)
         {

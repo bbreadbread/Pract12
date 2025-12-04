@@ -43,24 +43,19 @@ namespace Pract12.Service
                                     .Include(s => s.Role)
                                     .Where(u => u.RoleId == roleId)
                                     .ToList();
-
                 Users.Clear();
 
                 foreach (var user in users)
                 {
                     Users.Add(user);
                 }
-
-
-
             }
             else
             {
                 var users = _db.Users
-                                            .Include(s => s.UserProfile)
-                                            .Include(s => s.Role)
-                                            .ToList();
-
+                                    .Include(s => s.UserProfile)
+                                    .Include(s => s.Role)
+                                    .ToList();
                 Users.Clear();
 
                 foreach (var user in users)
@@ -68,9 +63,6 @@ namespace Pract12.Service
                     Users.Add(user);
                 }
             }
-
-
-
         }
         public void Remove(User user)
         {
@@ -96,7 +88,5 @@ namespace Pract12.Service
                 existing.AvatarUrl = profile.AvatarUrl;
             }
         }
-
-
     }
 }

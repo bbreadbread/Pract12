@@ -23,7 +23,7 @@
                         <Binding Path="UserProfile.Phone">
                             <Binding.ValidationRules>
                                 <validators:NumberValidation/>
-                    </Binding.ValidationRules>
+                        </Binding.ValidationRules>
                         </Binding>
                     </TextBox.Text>
                 </TextBox>

@@ -1,0 +1,38 @@
+﻿<Page x:Class="Pract12.Pages.AddInterestGroupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pract12.Pages"
+      xmlns:validators="clr-namespace:Pract12.ValidationRules"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddInterestGroupPage">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <Label>Наименование группы интересов</Label>
+                <StackPanel>
+                    <TextBox x:Name="TitleBox">
+                        <TextBox.Text>
+                            <Binding Path="Title">
+                                <Binding.ValidationRules>
+                                    <validators:NameGroupValidation/>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </StackPanel>
+                
+                
+                <Label>Краткое описание</Label>
+                <TextBox Text="{Binding Description}"/>
+            </StackPanel>
+            <StackPanel>
+                <Button Click="save">Сохранить</Button>
+                <Button Click="back">Назад</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
